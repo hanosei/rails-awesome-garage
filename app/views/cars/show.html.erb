@@ -3,4 +3,12 @@
 <p><strong>Fuel:</strong> <%= @car.fuel %></p>
 <p><strong>Owner:</strong> <%= @car.owner.nickname %></p>
 
+<% if Favourite.exists?(car: @car) %>
+  <p>This car is already in your garage!</p>
+<% else %>
+  <%= simple_form_for [@car, Favourite.new] do |f| %>
+    <%= f.submit "Add to Garage", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
 <%= link_to 'Back to All Cars', cars_path %>
