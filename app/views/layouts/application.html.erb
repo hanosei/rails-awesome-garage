@@ -11,6 +11,15 @@
   </head>
 
   <body>
+   <header>
+      <nav>
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'All Cars', cars_path %></li>
+          <li><%= link_to 'Your Garage', favourites_path %></li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

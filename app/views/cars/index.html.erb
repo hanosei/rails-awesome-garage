@@ -3,8 +3,10 @@
 <ul>
   <% @cars.each do |car| %>
     <li>
-      <strong><%= car.brand %> <%= car.model %></strong> -
-      <%= link_to 'View Details', car_path(car) %>
+      <strong><%= car.brand %> <%= car.model %></strong>
+      (<%= link_to 'View Details', car_path(car) %>)
     </li>
   <% end %>
 </ul>
+
+<%= link_to 'Go to Your Garage', favourites_path, class: "btn btn-secondary" %>
