@@ -1,0 +1,15 @@
+<h1>Your Garage</h1>
+
+<% if @favourites.any? %>
+  <ul>
+    <% @favourites.each do |favourite| %>
+      <li>
+        <strong><%= favourite.car.brand %> <%= favourite.car.model %></strong>
+        (<%= link_to 'View Car', car_path(favourite.car) %>)
+        <%= link_to 'Remove from Garage', favourite_path(favourite), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Your garage is empty!</p>
+<% end %>
