@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :cars, only: [:index, :show] do
     resources :favourites, only: [:create]
   end
-  resources :favourites, only: [:index, :destroy]
+  resources :favourites, only: [:index, :create, :destroy]
 
 end
